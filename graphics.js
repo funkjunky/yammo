@@ -1,34 +1,20 @@
-const c = {
-    purple:     '#b35ce5',
-    darkGreen:  '#2dab9a',
-    blue:       '#65ecda',
-    green:      '#17ff70',
-    red:        '#ff3f3f',
-    orange:     '#ffaf3f'
-};
+import thief from './drawing/thief';
 
-const width = 5;
+export default (ctx, dt) => {
+    const gameState = window.gameStore.getState();
+    const graphicsState = window.graphicsStore.getState();
 
-export default (ctx, state, dt) => {
-    const drawPerson = (person, color = c.orange) => {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = width;
-        ctx.beginPath();
-        ctx.moveTo(person.x, person.y + 50);
-        ctx.lineTo(person.x + 25, person.y);
-        ctx.lineTo(person.x - 25, person.y);
-        ctx.closePath();
-        ctx.stroke();
-    };
+    const getState = entity => ({
+        game: gameState.entities[entity.id],
+        graphics: graphicsState.entities[entity.id],
+    });
 
     //BEGIN ACTUAL GRAPHICS
     ctx.clearRect(0, 0, 640, 480);
-    //default colour
-    ctx.fillStyle = c.blue;
 
-    Object.values(state.entities).reverse().forEach(entity => {
+    Object.values(window.gameStore.getState().entities).reverse().forEach(entity => {
         ctx.save();
-        drawPerson(entity);
+        thief(ctx, getState(entity));
         ctx.restore();
     });
 };

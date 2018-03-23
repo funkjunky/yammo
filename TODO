@@ -3,44 +3,29 @@ TODO
 
  ~~Finished - Basic Tick Example~~
 
- *- tag v0.9
- *- push tags
- *- branch develop
+ *- copy the seed and create a new game!
 
- *- create various npm libraries for middlewares
- *- rename repository to “effect-tick”
- *- merge to master
- *- tag v1.0
- *- branch develop
- *- Greatly improve README for anyone to use
+ - setup doing sprites with canvas draw image
+	*- delete old code for graphics
+	*- get a sprite rendering (hypothetically)
+	*- get the sprite showing and working
+		*- No errors
+		*- get sprite showing… troubleshooting
 
- *- bind key to shoot fireball from me. Enemy is still automatic.
+	*- properly write out the basics of graphics reducer
 
- *- add y coordinate to demo entity reducer and all actions
- *- update seek to work with y coordinate
- *- add the y coordinate for graphics
- *- ensure it all still works
+	- add slime character in far away position.
 
- *- add jump action
- *- ensure it works
- *- seek doesn’t seek y properly.
- *- commit, push
+	- add a fireball attack for thief. use walking on the spot as the casting animation, then attack animation to throw the fireball, then seek the fireball.
 
- *- npm link tick folder
+	- add click movement
 
- *- Tick: switch the effect for an action, so any library can use it.
- *- get my project to work with the new action version.
+ - Organize files
+ - ensure HMR is working for everything still
 
- *- clean up folder structure
- *- graphics should be in a separate folder.. for now keep it in graphics.js
- *- get the thing working again with the file moves.
- *- all generator actions should probably be taken down a function. Do I need to do args => generator(), while not just generator(args)?
 
- *- copy the code and create a seed project
- *- get the seed working with parcel instead of webpack/babel
- *- push seed
 
- - copy the seed and create a new game!
+
 
  - Finish the new game
 	~~ No Graphics -> Shape Graphics -> Sprites ~~
